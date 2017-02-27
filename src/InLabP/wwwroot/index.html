@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <meta charset="utf-8" />
+    <title>InLab Application</title>
+
+    <link rel="stylesheet"
+          href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+          href="styles/main.css" />
+
+    <link href="./styles/fonts/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
+
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="lib/core-js/client/shim.min.js"></script>
+
+
+    <script src="lib/zone.js/dist/zone.js"></script>
+    <script src="lib/reflect-metadata/Reflect.js"></script>
+    <script src="lib/systemjs/dist/system.src.js"></script>
+
+
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app')
+                .then(null, console.error.bind(console));
+    </script>
+</head>
+<body>
+    <my-app>Loading</my-app>
+    
+
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Siedziba</h3>
+                        <p>
+                            Domaniewska 41
+                            <br>Na banicji, wyrzuceni z siedziby ITM
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Jakieś linki</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>O nas</h3>
+                        <p>Nic o nas bez nas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        &copy; InLab 2017
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-3">
+                <div class="news-list">
+                    <ul>
+                        <li *ngFor="let news of newses" (click)="showNews(news)">
+                            <span>{{news.title}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="news" *ngIf="selectedNews">
+                    {{selectedNews.title}}
+                    <hr />
+                    {{selectedNews.body}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-3">
+                <div class="news-list">
+                    <ul>
+                        <li *ngFor="let cat of categories" (click)="showCategory(cat)">
+                            <span>{{cat.name}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="news" *ngIf="selectedCategory">
+                    {{selectedCategory.name}}
+                    <hr />
+                    <ul *ngIf="selectedCategory.newses">
+                        <li *ngFor="let news of selectedCategory.newses" (click)="showSelectedNews(news)" style="cursor:pointer;">
+                            {{news.title}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

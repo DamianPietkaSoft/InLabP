@@ -1,0 +1,45 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
+var NewsService = (function () {
+    function NewsService(http) {
+        this.http = http;
+        this.getNewsUrl = "/Home/GetNewses";
+        this.getNewsForCat = "/Home/GetNewsesForSelectedCategory";
+        this.getNewsDetails = "/Home/GetNewsDetails";
+    }
+    NewsService.prototype.getNewes = function () {
+        return this.http.get(this.getNewsUrl)
+            .map(function (res) { return res.json().data; });
+    };
+    ;
+    NewsService.prototype.getNewsesForCategory = function (selectedId) {
+        var params = new http_1.URLSearchParams();
+        params.set('id', selectedId.toString()); // the user's search value
+        return this.http.get(this.getNewsForCat, { search: params })
+            .map(function (res) { return res.json().data; });
+    };
+    NewsService.prototype.getSelectedNews = function (id) {
+        var params = new http_1.URLSearchParams();
+        params.set('id', id.toString()); // the user's search value
+        return this.http.get(this.getNewsDetails, { search: params })
+            .map(function (res) { return res.json().data; });
+    };
+    return NewsService;
+}());
+NewsService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], NewsService);
+exports.NewsService = NewsService;
+//# sourceMappingURL=news.service.js.map
